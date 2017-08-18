@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: ./docker
+    container_name: 'twilio-frame-demo'
+    ports:
+     - '1080:5000'
+    volumes:
+     - ./:/www/twilio-frame-demo

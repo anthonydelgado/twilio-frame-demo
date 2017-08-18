@@ -1,0 +1,13 @@
+{
+  "name": "twilio-frame-demo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "twilio-common": "^0.1.6",
+    "twilio-frame": "^0.1.1"
+  }
+}
