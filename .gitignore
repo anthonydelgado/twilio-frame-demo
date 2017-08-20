@@ -1,9 +1,13 @@
+# Logs
+logs
+*.log
+
 # env
 .env
 
-# IDE config
-.idea/
-
-# npm
-node_modules/
+# Dependency
+node_modules
 package-lock.json
+
+# JetBrains IDE Setting
+.idea

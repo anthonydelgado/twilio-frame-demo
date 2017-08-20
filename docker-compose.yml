@@ -4,6 +4,6 @@ services:
     build: ./docker
     container_name: 'twilio-frame-demo'
     ports:
-     - '1080:5000'
+     - '1080:3000'
     volumes:
      - ./:/www/twilio-frame-demo

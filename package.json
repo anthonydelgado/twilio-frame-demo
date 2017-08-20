@@ -1,13 +1,33 @@
 {
   "name": "twilio-frame-demo",
+  "description": "Demo application of Twilio Frame and Chat.",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node ./bin/www"
+  },
+  "author": {
+    "name": "Yuto Yamada",
+    "email": "yuto.yamada@kddi-web.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "twilio frame",
+    "twilio chat",
+    "twilio",
+    "express"
+  ],
+  "engines": {
+    "node": ">=8.4.0"
   },
   "dependencies": {
-    "express": "^4.15.4",
-    "twilio-common": "^0.1.6",
-    "twilio-frame": "^0.1.1"
+    "debug": "~2.6.3",
+    "dotenv-safe": "~4.0.4",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "twilio-common": "~0.1.6",
+    "twilio-frame": "~0.1.1"
   }
 }
