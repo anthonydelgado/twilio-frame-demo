@@ -5,14 +5,23 @@ if (process.env.NODE_ENV !== 'test') {
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
+const bodyParser = require('body-parser');
 
+const top = require('./routes/top');
 const token = require('./routes/token');
 
 const app = express();
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', top);
 app.use('/token', token);
 
 // catch 404 and forward to error handler
