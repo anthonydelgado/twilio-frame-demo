@@ -1,18 +1,16 @@
 'use strict';
 
 import axios from 'axios';
+import chat from 'twilio-chat';
+const frame = require("twilio-frame/public_api/Frame");
 
 loadChat();
 
 function loadChat() {
   const channelName = 'chatFrameDemo';
-  axios
-    .post('/token', {
-      identity: 'Yuto', // TODO fix to input mail address!
-      device: 'browser'
-    })
-    .then(res => {
-      return Twilio.Chat.Client.create(res.data.token, {
+  generateToken()
+    .then(token => {
+      return chat.create(token, {
         logLevel: 'debug'
       });
     })
@@ -35,6 +33,22 @@ function loadChat() {
     });
 }
 
+function generateToken() {
+  return new Promise((resolve, reject) => {
+    axios
+      .post('/token', {
+        identity: 'Yuto', // TODO fix to input mail address!
+        device: 'browser'
+      })
+      .then(res => {
+        resolve(res.data.token);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  })
+}
+
 function loadFrame(client, channel) {
   const frameConfiguration = {
     channel: {
@@ -48,6 +62,6 @@ function loadFrame(client, channel) {
       }
     }
   };
-  const chatFrame = Twilio.Frame.createChat(client, frameConfiguration);
-  chatFrame.loadChannel('#chatContainer', channel);
+  const chatFrame = frame.createChat(client, frameConfiguration);
+  chatFrame.loadChannel('#chatContainer', channel)
 }

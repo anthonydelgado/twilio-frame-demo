@@ -28,13 +28,18 @@
     "express": "~4.15.2",
     "jade": "~1.11.0",
     "morgan": "~1.8.1",
-    "twilio": "~3.6.3",
-    "twilio-common": "~0.1.6",
-    "twilio-chat": "~1.1.1",
-    "twilio-frame": "~0.1.1"
+    "twilio": "~3.6.3"
   },
   "devDependencies": {
     "axios": "~0.16.2",
+    "bluebird": "^3.5.0",
+    "css-loader": "^0.28.5",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.18.2",
+    "twilio-common": "~0.1.6",
+    "twilio-chat": "~1.1.1",
+    "twilio-frame": "~0.1.1",
     "webpack": "^3.5.5"
   }
 }
